@@ -1,6 +1,8 @@
-<% @posts.each do |post| %>
-  <h1><%= link_to post.title, post_path(post) %></h1>
-  <p>Published <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %></p><br>
-<% end %>
-
-<%= link_to "New Post", new_post_path %>
+<div class="posts">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h2 class="title"><%= link_to post.title, post_path(post) %></h2>
+      <p class="date">Published <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %></p>
+    </div>
+  <% end %>
+</div>
