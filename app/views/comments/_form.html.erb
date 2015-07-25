@@ -1,6 +1,8 @@
-<%= simple_form_for ([@post, @post.comments.build]) do |f| %>
+<div class="comment-form">
+  <%= simple_form_for ([@post, @post.comments.build]) do |f| %>
 
-  <%= f.input :comment %>
-  <%= f.submit %>
+    <%= f.input :comment, label: false %>
+    <%= f.submit 'Submit', class: "show-buttons"  %>
 
-<% end %>
+  <% end %>
+</div>

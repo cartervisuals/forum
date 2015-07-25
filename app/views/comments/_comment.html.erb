@@ -1,7 +1,13 @@
-<div class="comment">
-  <p><%= comment.user.username %> said:</p>
-  <p><%= comment.comment %></p>
-</div>
+<div class="comment clearfix">
+  <div class="content">
+    <p class="comment-content"> <%= comment.comment %></p>
+    <p class="comment-author"><%= comment.user.username %></p> 
+  </div>
 
-<%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
-<%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?"} %>
+  <div class="buttons">
+    <% if current_user %>
+      <%= link_to "Edit", edit_post_comment_path(comment.post, comment), class: "buttons" %>
+      <%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?"}, class: "buttons" %><br><br>
+    <% end %>
+  </div>
+</div>

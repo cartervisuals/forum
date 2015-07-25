@@ -4,9 +4,10 @@
   <p class="show-p"><%= @post.content %></p>
 
   <div class="comments">
-    <h5><%= @post.comments.count %> Comments</h5>
+    <h5><%=  pluralize( @post.comments.count, 'comment' ) %></h5>
+
     <p><%= render @post.comments %></p>
-    <h3>Reply</h3>
+    <h3>Comment:</h3>
     <%= render 'comments/form' %>
   </div>
 
